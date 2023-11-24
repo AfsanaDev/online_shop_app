@@ -30,14 +30,14 @@ class _SplashPageState extends State<SplashPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              width: 100,
+              width: 200,
               child: Image.asset('assets/images/splash_img.png'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 11,
             ),
-            Text(
-              'Make Online Marketing Simple',
+            const Text(
+              'Buy What You Want',
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
