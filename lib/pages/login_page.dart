@@ -1,10 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:http/http.dart';
 import 'package:online_shop_app/constants/endpoints.dart';
 
 import '../constants/urls.dart';
+import 'my_product_list_page.dart';
 
 class LoginPage extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
@@ -26,8 +29,11 @@ class LoginPage extends StatelessWidget {
 
       });
       if (response.statusCode == 200) {
-        final Map<String, dynamic> data = jsonDecode(response.body);
-        print("Login Successfully");
+        var data = jsonDecode(response.body.toString());
+        print(data['access_token']);
+        Get.offAll(() => MyProductListPage());
+        Get.snackbar('Success', 'Login successful');
+        //print("Login successfully");
       } else {
         print("failed");
       }

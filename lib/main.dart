@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_shop_app/pages/all_product_list.dart';
 
 import 'pages/login_page.dart';
 import 'pages/splash_page.dart';
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashPage(),
+      home:
+      SplashPage(),
+      //AllProductList(),
       debugShowCheckedModeBanner: false,
     );
   }
