@@ -23,7 +23,8 @@ class AllProductList extends StatelessWidget {
           return ListTile(
             leading: SizedBox(
               width: 100,
-              child: Image.network(product.url.toString()),
+              child: product.url.isNotEmpty ? Image.network("https://demo.alorferi.com${product.url}"):
+                  null
             ),
             title: Text(product.name),
             subtitle: Text(product.price.toString()),

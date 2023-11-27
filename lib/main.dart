@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_shop_app/pages/all_product_list.dart';
+import 'package:online_shop_app/pages/my_product_list_page.dart';
 
+import 'pages/dashboard_page.dart';
 import 'pages/login_page.dart';
 import 'pages/splash_page.dart';
 
@@ -22,8 +24,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home:
-      SplashPage(),
-      //AllProductList(),
+       SplashPage(),
+       // AllProductList(),
+      // DashboardPage(),
+      // MyProductListPage(),
       debugShowCheckedModeBanner: false,
     );
   }

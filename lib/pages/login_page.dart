@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:http/http.dart';
 import 'package:online_shop_app/constants/endpoints.dart';
+import 'package:online_shop_app/pages/all_product_list.dart';
 
 import '../constants/urls.dart';
 import 'my_product_list_page.dart';
@@ -31,7 +32,8 @@ class LoginPage extends StatelessWidget {
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
         print(data['access_token']);
-        Get.offAll(() => MyProductListPage());
+        Get.offAll(() =>MyProductListPage());
+        // AllProductList()
         Get.snackbar('Success', 'Login successful');
         //print("Login successfully");
       } else {

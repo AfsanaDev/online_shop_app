@@ -26,9 +26,10 @@ class ProductControllers extends GetxController {
           productList.value.add(Product(
               id: element['id'],
               name: element['name'],
-              url: element['url'] ,
+              url:  element['url'] ?? "",
               price: element['price']));
         }
+        productList.refresh();
       }
     } catch (e,s) {
       print('Error $e , stack trace $s');

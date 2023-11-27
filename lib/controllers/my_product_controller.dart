@@ -33,13 +33,20 @@ class MyProductController extends GetxController {
         // print(dataMap.runtimeType);
         List<dynamic> jsonList = dataMap['data'];
         for (var element in jsonList) {
+
+          // var url = "" ;
+          // if(element['url']) {
+          //   url = element['url'] ;
+          // }
           productList.value.add(Product(
               id: element['id'],
               name: element['name'],
-              url: element['url'],
+              url: element['url'] ?? "",
               price: element['price']));
-           print(jsonList);
+
         }
+        productList.refresh();
+        print(productList.value);
       } else {
         print("failed");
       }
