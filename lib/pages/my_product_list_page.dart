@@ -22,8 +22,8 @@ class MyProductListPage extends StatelessWidget {
               child:ListTile(
                 title: Text(product.name),
                 leading: SizedBox(
-                  width: 60,
-                  height: 30,
+                  width: 160,
+                  height: 60,
                   child: Image.network(
                     "https://demo.alorferi.com${product.url.toString()}"),
                 ),

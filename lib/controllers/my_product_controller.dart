@@ -42,6 +42,7 @@ class MyProductController extends GetxController {
               id: element['id'],
               name: element['name'],
               url: element['url'] ?? "",
+              stock_quantity: element['stock_quantity'].toString(),
               price: element['price']));
 
         }
