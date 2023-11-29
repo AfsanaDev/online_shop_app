@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/my_product_controller.dart';
+import 'all_product_list.dart';
+import 'login_page.dart';
 
 class MyProductListPage extends StatelessWidget {
   MyProductController myProductController = Get.put(MyProductController());
@@ -31,6 +33,43 @@ class MyProductListPage extends StatelessWidget {
               ),
             );
           }),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+                accountName: Text('Online Shop'),
+                accountEmail: Image.asset('assets/images/logo.png')),
+            ListTile(
+              leading: const Icon(Icons.shopping_bag_outlined),
+              title: const Text('My Product'),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shopping_bag_outlined),
+              title: const Text('My Order'),
+              // onTap: (){
+              //   Navigator.push(context, MaterialPageRoute(builder: (context)=>MyOrederPage()));
+              // },
+            ),
+            ListTile(
+              leading: const Icon(Icons.collections_bookmark_rounded),
+              title: const Text('All Product'),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AllProductList()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.person_3_rounded),
+              title: const Text('All User'),
+              // onTap:(){
+              //   Navigator.push(context, MaterialPageRoute(builder: (context)=>AllUserList()));
+              // },
+            ),
+          ],
+        ),
       ),
     );
   }
