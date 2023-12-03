@@ -41,7 +41,7 @@ class MyProductController extends GetxController {
           productList.value.add(Product(
               id: element['id'],
               name: element['name'],
-              url: element['url'] ?? "",
+              url: element['url'] ?? "/images/blank_product_picture.png",
               stock_quantity: element['stock_quantity'].toString(),
               price: element['price']));
 

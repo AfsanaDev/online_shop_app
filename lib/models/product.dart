@@ -4,6 +4,7 @@ class Product {
    late String url ;
    late String stock_quantity ;
    late num price;
+   static const blankProducts = "/images/blank_product_picture.png";
 
   Product(
       {required this.id,

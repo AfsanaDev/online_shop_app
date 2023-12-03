@@ -8,6 +8,7 @@ import 'package:online_shop_app/pages/my_product_list_page.dart';
 
 import '../controllers/product_controllers.dart';
 import '../models/product.dart';
+import 'users_page.dart';
 
 class AllProductList extends StatelessWidget {
   ProductControllers productControllers = Get.put(ProductControllers());
@@ -25,7 +26,7 @@ class AllProductList extends StatelessWidget {
           var product= productControllers.productList[index];
           return ListTile(
             leading: SizedBox(
-              width: 160,
+              width: 200,
               child: product.url.isNotEmpty ? Image.network("https://demo.alorferi.com${product.url}"):
                   null
             ),
@@ -67,9 +68,9 @@ class AllProductList extends StatelessWidget {
              ListTile(
               leading: const Icon(Icons.person_3_rounded),
                title: const Text('All User'),
-               // onTap:(){
-               //   Navigator.push(context, MaterialPageRoute(builder: (context)=>AllUserList()));
-               // },
+               onTap:(){
+                 Navigator.push(context, MaterialPageRoute(builder: (context)=>UsersPage()));
+               },
             ),
           ],
         ),
