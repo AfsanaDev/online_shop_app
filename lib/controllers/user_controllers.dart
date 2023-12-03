@@ -21,7 +21,7 @@ class UserControllers extends GetxController{
         for( var data in jsonList){
           userList.value.add(User(id: data['id'],
               name: data['name'],
-              url: data['url'] ?? ""
+              url: data['url'] ?? "/images/blank_product_picture.png"
           ));
         }
         userList.refresh();
