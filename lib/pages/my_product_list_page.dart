@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_shop_app/pages/add_product_page.dart';
 
 import '../controllers/my_product_controller.dart';
 import 'all_product_list.dart';
@@ -17,23 +18,24 @@ class MyProductListPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("My product list"),
       ),
-      body: Obx(()=>ListView.builder(
-          itemCount: myProductController.productList.length,
-          itemBuilder: (context, index) {
-            var product = myProductController.productList[index];
-            return Card(
-              child:ListTile(
-                title: Text(product.name),
-                leading: SizedBox(
-                  width: 160,
-                  height: 60,
-                  child: Image.network(
-                    "https://demo.alorferi.com${product.url.toString()}"),
+      body: Obx(
+        () => ListView.builder(
+            itemCount: myProductController.productList.length,
+            itemBuilder: (context, index) {
+              var product = myProductController.productList[index];
+              return Card(
+                child: ListTile(
+                  title: Text(product.name),
+                  leading: SizedBox(
+                    width: 160,
+                    height: 60,
+                    child: Image.network(
+                        "https://demo.alorferi.com${product.url.toString()}"),
+                  ),
+                  subtitle: Text(product.price.toString()),
                 ),
-                subtitle: Text(product.price.toString()),
-              ),
-            );
-          }),
+              );
+            }),
       ),
       drawer: Drawer(
         child: ListView(
@@ -44,8 +46,9 @@ class MyProductListPage extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.shopping_bag_outlined),
               title: const Text('My Product'),
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginPage()));
               },
             ),
             ListTile(
@@ -58,19 +61,28 @@ class MyProductListPage extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.collections_bookmark_rounded),
               title: const Text('All Product'),
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>AllProductList()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AllProductList()));
               },
             ),
             ListTile(
               leading: const Icon(Icons.person_3_rounded),
               title: const Text('All User'),
-              onTap:(){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>UsersPage()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => UsersPage()));
               },
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {  
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>const AddProductPage()));
+        },
+        child: const Icon(Icons.add),
+
       ),
     );
   }
