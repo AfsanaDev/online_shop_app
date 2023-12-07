@@ -8,6 +8,7 @@ import 'package:online_shop_app/pages/my_product_list_page.dart';
 
 import '../controllers/product_controllers.dart';
 import '../models/product.dart';
+import 'my_order_page.dart';
 import 'users_page.dart';
 
 class AllProductList extends StatelessWidget {
@@ -42,7 +43,7 @@ class AllProductList extends StatelessWidget {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-                accountName: Text('Online Shop'),
+                accountName: const Text('Online Shop'),
                 accountEmail: Image.asset('assets/images/logo.png')),
              ListTile(
              leading: const Icon(Icons.shopping_bag_outlined),
@@ -54,15 +55,16 @@ class AllProductList extends StatelessWidget {
              ListTile(
               leading: const Icon(Icons.shopping_bag_outlined),
               title: const Text('My Order'),
-              // onTap: (){
-              //   Navigator.push(context, MaterialPageRoute(builder: (context)=>MyOrederPage()));
-              // },
+               onTap: () {
+                 Navigator.push(context,
+                     MaterialPageRoute(builder: (context) => const MyOrderPage()));
+               },
             ),
              ListTile(
               leading: const Icon(Icons.collections_bookmark_rounded),
               title: const Text('All Product'),
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>AllProductList()));
+                Navigator.pop(context);
               },
             ),
              ListTile(

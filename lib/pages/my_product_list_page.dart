@@ -5,6 +5,7 @@ import 'package:online_shop_app/pages/add_product_page.dart';
 import '../controllers/my_product_controller.dart';
 import 'all_product_list.dart';
 import 'login_page.dart';
+import 'my_order_page.dart';
 import 'users_page.dart';
 
 class MyProductListPage extends StatelessWidget {
@@ -41,7 +42,7 @@ class MyProductListPage extends StatelessWidget {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-                accountName: Text('Online Shop'),
+                accountName: const Text('Online Shop'),
                 accountEmail: Image.asset('assets/images/logo.png')),
             ListTile(
               leading: const Icon(Icons.shopping_bag_outlined),
@@ -54,9 +55,10 @@ class MyProductListPage extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.shopping_bag_outlined),
               title: const Text('My Order'),
-              // onTap: (){
-              //   Navigator.push(context, MaterialPageRoute(builder: (context)=>MyOrederPage()));
-              // },
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyOrderPage()));
+              },
             ),
             ListTile(
               leading: const Icon(Icons.collections_bookmark_rounded),
@@ -78,11 +80,11 @@ class MyProductListPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {  
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>const AddProductPage()));
+        onPressed: () {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (_) => const AddProductPage()));
         },
         child: const Icon(Icons.add),
-
       ),
     );
   }
