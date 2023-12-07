@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_shop_app/pages/login_page.dart';
+import 'package:online_shop_app/pages/sign_up_page.dart';
 
 import 'all_product_list.dart';
 
@@ -18,7 +19,8 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
     Future.delayed(const Duration(seconds: 4), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => AllProductList()));
+          .pushReplacement(MaterialPageRoute(builder: (_) =>AllProductList()));
+      // AllProductList()
     });
   }
 
