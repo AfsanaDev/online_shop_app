@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home:
-       SplashPage(),
+       // SplashPage(),
        // AllProductList(),
       // DashboardPage(),
-      // MyProductListPage(),
+      MyProductListPage(),
       debugShowCheckedModeBanner: false,
     );
   }

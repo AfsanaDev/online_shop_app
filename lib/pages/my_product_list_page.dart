@@ -4,6 +4,7 @@ import 'package:online_shop_app/pages/add_product_page.dart';
 
 import '../controllers/my_product_controller.dart';
 import 'all_product_list.dart';
+import 'edit_product_page.dart';
 import 'login_page.dart';
 import 'my_order_page.dart';
 import 'users_page.dart';
@@ -26,15 +27,42 @@ class MyProductListPage extends StatelessWidget {
               var product = myProductController.productList[index];
               return Card(
                 child: ListTile(
-                  title: Text(product.name),
-                  leading: SizedBox(
-                    width: 160,
-                    height: 60,
-                    child: Image.network(
-                        "https://demo.alorferi.com${product.url.toString()}"),
-                  ),
-                  subtitle: Text(product.price.toString()),
-                ),
+                    title: Text(product.name),
+                    leading: SizedBox(
+                      width: 160,
+                      height: 60,
+                      child: Image.network(
+                          "https://demo.alorferi.com${product.url.toString()}"),
+                    ),
+                    subtitle: Text(product.price.toString()),
+                    trailing: Column(
+                      children: [
+
+                         Padding(
+                           padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                           child: SizedBox(
+                              // width: 40,
+                              height: 8,
+                              child: IconButton(
+                                onPressed: () {
+                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>const EditProductPage()));
+                                },
+                                    icon: const Icon(Icons.edit),
+                              ),
+                            ),
+                         ),
+
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                          child: SizedBox(
+                            height: 8,
+                            child: IconButton(onPressed: (){
+
+                            }, icon: const Icon(Icons.delete)),
+                          ),
+                        )
+                      ],
+                    )),
               );
             }),
       ),

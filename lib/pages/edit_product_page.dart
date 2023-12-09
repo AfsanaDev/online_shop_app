@@ -5,16 +5,15 @@ import 'all_product_list.dart';
 import 'login_page.dart';
 import 'my_order_page.dart';
 
-class AddProductPage extends StatelessWidget {
-  const AddProductPage({super.key});
+class EditProductPage extends StatelessWidget {
+  const EditProductPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Products'),
+        title: const Text('Edit Product'),
       ),
-
       drawer: Drawer(
         child: ListView(
           children: [

@@ -10,7 +10,7 @@ class SingleProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: ,
+        title: const Text('Single Product Page'),
       ),
     );
   }
