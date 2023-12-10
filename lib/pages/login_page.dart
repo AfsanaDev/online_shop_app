@@ -6,6 +6,7 @@ import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:http/http.dart';
 import 'package:online_shop_app/constants/endpoints.dart';
 import 'package:online_shop_app/pages/all_product_list.dart';
+import 'package:online_shop_app/pages/sign_up_page.dart';
 
 import '../constants/urls.dart';
 import 'my_product_list_page.dart';
@@ -111,6 +112,27 @@ class LoginPage extends StatelessWidget {
                     'Login',
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   )),
+                ),
+              ),
+              const SizedBox(
+                height: 11,
+              ),
+
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=>SignUpPage()));
+                },
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent.shade100,
+                    borderRadius: BorderRadius.circular(11),
+                  ),
+                  child: const Center(
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      )),
                 ),
               ),
             ],

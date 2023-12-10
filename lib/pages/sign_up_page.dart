@@ -48,7 +48,7 @@ class SignUpPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Sign Up",style: TextStyle(
+              const Text("Sign Up",style: TextStyle(
                 fontSize: 34,
                 fontWeight: FontWeight.w900,
                 color: Colors.red
