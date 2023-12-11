@@ -28,7 +28,9 @@ class MyProductListPage extends StatelessWidget {
         Get.snackbar('successful', ' Product delete successfully');
         // print('Product deleted successfully');
       }else{
-        Get.snackbar('failed', 'Product delete failed');
+        Get.snackbar('Failed', 'Failed to delete product. Status code: ${response.statusCode}');
+        // Optionally, you can check the response body for more information
+        print('Response body: ${response.body}');
       }
     }catch(e){
       print("Error are $e");
